@@ -1,0 +1,39 @@
+.section__product-highlight {
+    .image-wrapper {
+        z-index: 1;
+        img {
+            width: 75%;
+            position: relative;
+            z-index: 1;
+            margin: auto;
+        }
+    }
+    .repeat-text {
+        text-align: center;
+        z-index: 0;
+        font-size: 110px;
+        line-height: .71;
+        font-family: 'Fresh Almond';
+        position: absolute;
+        top: 10%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: transparent;
+        -webkit-text-stroke: 2px #F87C04;
+    }
+    .title-wrapper {
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Fresh Almond";
+            font-size: 58px;
+            letter-spacing: .03em;
+            line-height: 54px;
+        }
+        p {
+            font-size: 48px;
+            line-height: 54px;
+            letter-spacing: .15em;
+            font-weight: 700;
+        }
+    }
+}
