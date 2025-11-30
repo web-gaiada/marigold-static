@@ -18,9 +18,9 @@
     <meta name="msapplication-TileColor" content="#e2e8f0" />
     <meta name="msapplication-config" content="browserconfig.xml" />
     <meta name="theme-color" content="#e2e8f0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet" />
 
     <!-- Title & description -->
     <title><%= htmlWebpackPlugin.options.title %></title>
@@ -44,191 +44,196 @@
     </script>
   </head>
   <body class="font-sans">
-
     <div id="smooth-wrapper">
       <div id="smooth-content">
-          <div id="page" style="background-image: url(<%= require('./images/bg-texture.png') %>);">
-            <div id="hero-image">
-              <div class="section__hero-image">
-        
-                <div class="section__hero-image relative w-full">
-                  <div class="swiper">
-                    <div class="swiper-wrapper swiper-container">
-        
-        
-                      <div class="swiper-slide">
-                        <div class="pt-[48.75%] relative">
-                          <img class="image-ratio" src="<%= require('./images/hero-image0.jpg') %>" alt="">
-                        </div>
+        <div id="page" style="background-image: url(<%=require('./images/bg-texture.png')%>)">
+          <div id="hero-image">
+            <div class="section__hero-image">
+              <div class="section__hero-image relative w-full">
+                <div class="swiper">
+                  <div class="swiper-wrapper swiper-container">
+                    <div class="swiper-slide">
+                      <div class="pt-[48.75%] relative">
+                        <img class="image-ratio" src="<%= require('./images/hero-image0.jpg') %>" alt="" />
                       </div>
-                      <div class="swiper-slide">
-                        <div class="pt-[48.75%] relative">
-                          <img class="image-ratio" src="<%= require('./images/hero-image1.jpg') %>" alt="">
-                        </div>
-                      </div>
-                      <div class="swiper-slide">
-                        <div class="pt-[48.75%] relative">
-                          <img class="image-ratio" src="<%= require('./images/hero-image2.jpg') %>" alt="">
-                        </div>
-                      </div>
-        
-        
                     </div>
-                  </div>
-                </div>
-        
-        
-              </div>
-            </div>
-        
-        
-        
-        
-        
-        
-        
-            <!-- text-aninmation  -->
-        
-        
-            
-            <div class="container mx-auto py-40" id="text-animation">
-                <div class="text text-center">
-                    <p class="font-serif text-marigold bg-footer-texture-text" style="font-size: 93px;">CRAFTED <span class="font-extra">TO DEATH</span><br /> IN MEXICO <br /><span class="font-extra">REBORN AND </span> PURIFIED <br />IN BALI.</p>
-                </div>
-            </div>
-        
-        
-        
-
-
-
-
-
-
-
-            <!-- product-highlihgt -->
-            
-
-
-            <div id="product-highlight" class="section__product-highlight">
-              <div class="container mx-auto">
-                <div class="inner px-24">
-                  <div class="swiper">
-                    <div class="swiper-wrapper">
-    
-    
-    
-                      <div class="swiper-slide">
-                        <div class="grid grid-cols-12">
-    
-                          <div class="md:col-span-6">
-                            <div class="image-wrapper relative">
-                              <img src="<%= require('./images/product-image.png') %>" alt="">
-                              <div class="repeat-text" data-repeat-text="BLANCO">
-                                <div class="inner-wrapper relative">
-
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-    
-                          <div class="md:col-span-6">
-                            <div class="rotate-icon-wrapper mb-6">
-                              <img src="<%= require('./images/rotate_placeholder.svg') %>" alt="">
-                            </div>
-                            <div class="title-wrapper text-marigold mb-2">
-                              <h2>marigold</h2>
-                              <p>BLANCO</p>
-                            </div>
-                            <div class="price-wrapper mb-4">
-                              <p class="text-grey text-[12px] tracking-[0.25em] font-bold">IDR 1,050,000</p>
-                            </div>
-                            <div class="description-wrapper mb-4">
-                              <p class="text-[11px] leading-[18px] tracking-[.1em] text-gray-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.</p>
-                            </div>
-                            <div class="input-wrapper">
-                              
-                            </div>
-                          </div>
-    
-                        </div>
+                    <div class="swiper-slide">
+                      <div class="pt-[48.75%] relative">
+                        <img class="image-ratio" src="<%= require('./images/hero-image1.jpg') %>" alt="" />
                       </div>
-    
-    
-    
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="pt-[48.75%] relative">
+                        <img class="image-ratio" src="<%= require('./images/hero-image2.jpg') %>" alt="" />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
 
+          <!-- text-aninmation  -->
 
-
-
-
-            <!-- title_break -->
-            <div class="section__title-break py-24">
-              <div class="container mx-auto text-center py-24">
-                <div class="inner relative">
-                  <div class="text-outline-wrapper z-[1] left-1/2 -translate-x-1/2 top-0 -translate-y-1/3 absolute" style="pointer-events: none;">
-                    <p class="text-[240px] font-serif" style="rotate: .5deg;">marigold</p>
-                  </div>
-                  <div class="text-outline-wrapper z-[1] left-1/2 -translate-x-1/2 top-0 -translate-y-1/3 absolute" style="pointer-events: none;">
-                    <p class="text-[240px] font-serif" style="rotate: -.5deg;">marigold</p>
-                  </div>
-                  <div class="text relative z-[2]">
-                    <p class="text-[130px] bg-footer-texture-text font-serif mb-6">PALOMA</p>
-                    <p class="text-[11px] uppercase tracking-[.25em] text-marigold font-bold">Dangerously Refreshing</p>
-                  </div>
-                </div>
-              </div>
+          <div class="container mx-auto py-40" id="text-animation">
+            <div class="text text-center">
+              <p class="font-serif text-marigold bg-footer-texture-text" style="font-size: 93px">
+                CRAFTED <span class="font-extra">TO DEATH</span><br />
+                IN MEXICO <br /><span class="font-extra">REBORN AND </span> PURIFIED <br />IN BALI.
+              </p>
             </div>
+          </div>
 
+          <!-- product-highlihgt -->
 
-            <div class="section__photo-gallery">
-              <div class="container">
-                
-
-                <div class="marquee-text">[Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!]</div>
-              </div>
-            </div>
-        
-        
-            <!-- footer -->
+          <div id="product-highlight" class="section__product-highlight">
             <div class="container mx-auto">
-              <hr class="bg-marigold text-marigold border-marigold">
-            </div>
-        
-            <footer class="py-7">
-              <div class="container mx-auto">
-        
-                <div class="flex justify-between items-center mb-4">
-                  <div class="logo">
-                    <img src="/assets/logo.png" alt="">
-                  </div>
-        
-                  <div class="tagline text-right">
-                    <p class="text-marigold font-serif text-[70px] bg-footer-texture-text">FOLLOW</p>
-                    <div class="socials flex items-center justify-end">
-                      <a href="#">
-                        <img src="/assets/ig_footer.svg" class="mr-2" alt="">
-                      </a>
-                      <a href="#">
-                        <img src="/assets/tiktok_footer.svg" class="mr-8" alt="">
-                      </a>
-                      <p class="text-marigold font-serif text-[70px] bg-footer-texture-text">THE</p>
+              <div class="inner px-24">
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="grid grid-cols-12">
+                        <div class="md:col-span-6">
+                          <div class="image-wrapper relative">
+                            <img src="<%= require('./images/product-image.png') %>" alt="" />
+                            <div class="repeat-text" data-repeat-text="BLANCO">
+                              <div class="inner-wrapper relative"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="md:col-span-6">
+                          <div class="rotate-icon-wrapper mb-6">
+                            <img src="<%= require('./images/rotate_placeholder.svg') %>" alt="" />
+                          </div>
+                          <div class="title-wrapper text-marigold mb-2">
+                            <h2>marigold</h2>
+                            <p>BLANCO</p>
+                          </div>
+                          <div class="price-wrapper mb-4">
+                            <p class="text-grey text-[12px] tracking-[0.25em] font-bold">IDR 1,050,000</p>
+                          </div>
+                          <div class="description-wrapper mb-4">
+                            <p class="text-[11px] leading-[18px] tracking-[.1em] text-gray-1">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                          </div>
+                          <div class="input-wrapper"></div>
+                        </div>
+                      </div>
                     </div>
-                    <p class="text-marigold font-serif text-[70px] bg-footer-texture-text">CHAOS</p>
                   </div>
                 </div>
-        
-                <div class="flex justify-between items-center">
-                  <a href="#" class="text-gray tracking-wider">TERMS & CONDITIONS</a>
-                  <p class="text-grey">MARIGOLD™ © 2025. Respect the brand, embrace the chaos.</p>
-                </div>
-        
               </div>
-            </footer>
+            </div>
+          </div>
+
+          <!-- title_break -->
+          <div class="section__title-break py-24">
+            <div class="container mx-auto text-center py-24">
+              <div class="inner relative">
+                <div
+                  class="text-outline-wrapper z-[1] left-1/2 -translate-x-1/2 top-0 -translate-y-1/3 absolute"
+                  style="pointer-events: none">
+                  <p class="text-[240px] font-serif" style="rotate: 0.5deg">marigold</p>
+                </div>
+                <div
+                  class="text-outline-wrapper z-[1] left-1/2 -translate-x-1/2 top-0 -translate-y-1/3 absolute"
+                  style="pointer-events: none">
+                  <p class="text-[240px] font-serif" style="rotate: -0.5deg">marigold</p>
+                </div>
+                <div class="text relative z-[2]">
+                  <p class="text-[130px] bg-footer-texture-text font-serif mb-6">PALOMA</p>
+                  <p class="text-[11px] uppercase tracking-[.25em] text-marigold font-bold">
+                    Dangerously Refreshing
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section__photo-gallery">
+            <div class="container py-32">
+              <div class="photo-gallery-inner relative">
+                <div class="text-box"></div>
+
+                <div class="photo-item-wrapper"></div>
+              </div>
+
+              <div class="inner-marquee">
+                <div class="marquee-wrapper flex">
+                  <!-- <div class="marquee-text" style="text-wrap: nowrap;">[Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!]</div> -->
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- footer -->
+          <div class="container mx-auto">
+            <hr class="bg-marigold text-marigold border-marigold" />
+          </div>
+
+          <footer class="py-7">
+            <div class="container mx-auto">
+              <div class="flex justify-between items-center mb-4">
+                <div class="logo">
+                  <img src="/assets/logo.png" alt="" />
+                </div>
+
+                <div class="tagline text-right">
+                  <p class="text-marigold font-serif text-[70px] bg-footer-texture-text">FOLLOW</p>
+                  <div class="socials flex items-center justify-end">
+                    <a href="#">
+                      <img src="/assets/ig_footer.svg" class="mr-2" alt="" />
+                    </a>
+                    <a href="#">
+                      <img src="/assets/tiktok_footer.svg" class="mr-8" alt="" />
+                    </a>
+                    <p class="text-marigold font-serif text-[70px] bg-footer-texture-text">THE</p>
+                  </div>
+                  <p class="text-marigold font-serif text-[70px] bg-footer-texture-text">CHAOS</p>
+                </div>
+              </div>
+
+              <div class="flex justify-between items-center">
+                <a href="#" class="text-gray tracking-wider">TERMS & CONDITIONS</a>
+                <p class="text-grey">MARIGOLD™ © 2025. Respect the brand, embrace the chaos.</p>
+              </div>
+            </div>
+          </footer>
         </div>
       </div>
     </div>

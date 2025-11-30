@@ -2,9 +2,7 @@
   "name": "webpack-tailwind-starter",
   "version": "1.0.0",
   "author": {
-    "name": "Andrei Victor Bulearcă",
-    "email": "andrei.bulearca@gmail.com",
-    "url": "https://andreivictor.ro/"
+    "name": "reva athallah"
   },
   "description": "A starter frontend boilerplate using Webpack 5, TailwindCSS, SASS, PostCSS, Babel, ESLint, Stylelint, Prettier and more.",
   "keywords": [

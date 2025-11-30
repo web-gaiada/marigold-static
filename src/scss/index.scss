@@ -5,22 +5,23 @@
 @tailwind utilities;
 
 // @import "swiper";
-@import "./components/product-highlight.scss";
-@import "./components/title-break.scss";
+@import './components/product-highlight.scss';
+@import './components/title-break.scss';
+@import './components/photo-gallery.scss';
 @font-face {
-    font-family: "Fresh Almond";
-    font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/FreshAlmond-Regular.otf') format('opentype');
-    font-display: swap;
+  font-family: 'Fresh Almond';
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/FreshAlmond-Regular.otf') format('opentype');
+  font-display: swap;
 }
 
 @font-face {
-    font-family: Griffiths;
-    font-style: normal;
-    font-weight: normal;
-    src: url('../fonts/Griffiths.otf') format('opentype');
-    font-display: swap;
+  font-family: Griffiths;
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/Griffiths.otf') format('opentype');
+  font-display: swap;
 }
 
 html,
@@ -29,12 +30,12 @@ body {
 }
 
 .bg-footer-texture-text {
-    background: url('../images/footer-text-texture.jpg');
-    background-clip: text;
-    background-size: cover;
-    color: transparent!important;
-    line-height: 1;
-  }
+  background: url('../images/footer-text-texture.jpg');
+  background-clip: text;
+  background-size: cover;
+  color: transparent !important;
+  line-height: 1;
+}
 
 #page {
   padding: 0;

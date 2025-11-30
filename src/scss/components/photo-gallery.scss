@@ -1,0 +1,12 @@
+.section__photo-gallery {
+  .inner-marquee {
+    transform: rotate(-1.86deg);
+    .marquee-wrapper {
+      display: flex;
+      .marquee-text {
+        @apply text-marigold;
+        // color: '#F87C04';
+      }
+    }
+  }
+}
