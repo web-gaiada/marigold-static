@@ -23,7 +23,9 @@ gsap.registerPlugin(ScrollTrigger);
       },
     });
 
-    galleryTl.to();
+    photosEl.forEach((photo) => {
+      galleryTl.to(photo, {});
+    });
   });
 
   function horizontalLoop(items, config) {
