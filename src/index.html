@@ -44,12 +44,27 @@
     </script>
   </head>
   <body class="font-sans">
+    <div class="socials-sticky uppercase fixed left-0 top-1/2 translate-y-1/2 items-center z-10 py-6 px-4 flex bg-texture-socials" style="background-image: url(<%=require('./images/bg-texture.png')%>); background-color: #fff;">
+      <div class="text text-marigold text-[14px] tracking-[.25em] font-bold">
+        Follow the chaos
+      </div>
+      <div class="socials-buttons mt-4 flex">
+        <a href="#" class="mb-3">
+          <img src="<%= require('./images/instagram_header.svg') %>" style="rotate: 180deg;" alt="">
+        </a>
+        <a href="#">
+          <img src="<%= require('./images/tiktok_header.svg') %>" style="rotate: 180deg;" alt="">
+        </a>
+      </div>
+    </div>
+
     <div id="smooth-wrapper">
       <div id="smooth-content">
-        <div id="page" style="background-image: url(<%=require('./images/bg-texture.png')%>)">
-          <div id="hero-image">
+        <!-- Hero Image -->
+
+        <div id="hero-image" class="relative" style="z-index: 8;" data-speed="0.4">
             <div class="section__hero-image">
-              <div class="section__hero-image relative w-full">
+              <div class="relative w-full">
                 <div class="swiper">
                   <div class="swiper-wrapper swiper-container">
                     <div class="swiper-slide">
@@ -73,15 +88,64 @@
             </div>
           </div>
 
-          <!-- text-aninmation  -->
 
-          <div class="container mx-auto py-40" id="text-animation">
-            <div class="text text-center">
-              <p class="font-serif text-marigold bg-footer-texture-text" style="font-size: 93px">
-                CRAFTED <span class="font-extra">TO DEATH</span><br />
-                IN MEXICO <br /><span class="font-extra">REBORN AND </span> PURIFIED <br />IN BALI.
-              </p>
+        <div id="page" style="background-image: url(<%=require('./images/bg-texture.png')%>)">
+
+          <!-- Navigation -->
+          <div class="container mx-auto py-8" style="z-index: 7;">
+            <div class="flex justify-between items-center">
+                <div class="logo-image">
+                    <img src="<%= require('./images/Marigold_Logo.svg') %>" alt="">
+                </div>
+                <div class="navigation">
+
+                    <div class="inner py-5 px-32 border-marigold border rounded-md">
+                        <div class="wrapper flex">
+                            <div class="text">
+                                <p class="text-marigold">THE SPIRIT</p>
+                            </div>
+                            <div class="spacer px-6 text-marigold"> | </div>
+                            <div class="text">
+                                <p class="text-marigold">MARIGOLD PALOMA</p>
+                            </div>
+                            <div class="spacer px-6 text-marigold"> | </div>
+                            <div class="text">
+                                <p class="text-marigold">SWAG</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="actions py-5 px-6 border-marigold border rounded-md">
+                    <div class="wrapper flex items-center">
+                        <div class="text">
+                            <img src="<%= require('./images/btn_acc.svg') %>" alt="">
+                        </div>
+                        <div class="spacer px-6 text-marigold"> | </div>
+                        <div class="text">
+                            <img src="<%= require('./images/btn_cart.svg') %>" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
+          </div>
+          <!-- text-aninmation  -->
+          <div class="section__text-highlight">
+            <div class="outer py-40">
+              <div class="container mx-auto" id="text-animation">
+                <div class="text text-center">
+                  <p class="font-serif text-marigold bg-footer-texture-text" style="font-size: 93px">
+                    CRAFTED <span class="font-extra">TO DEATH</span><br />
+                    IN MEXICO <br /><span class="font-extra">REBORN AND </span> PURIFIED <br />IN BALI.
+                  </p>
+                </div>
+              </div>
+  
+              <div class="line-wrapper pt-24 text-center">
+                <div class="line mx-auto" style="width: 0px;"></div>
+              </div>
+            </div>
+
           </div>
 
           <!-- product-highlihgt -->
@@ -137,12 +201,12 @@
                 <div
                   class="text-outline-wrapper z-[1] left-1/2 -translate-x-1/2 top-0 -translate-y-1/3 absolute"
                   style="pointer-events: none">
-                  <p class="text-[240px] font-serif" style="rotate: 0.5deg">marigold</p>
+                  <p class="text-[240px] font-serif" style="">marigold</p>
                 </div>
                 <div
                   class="text-outline-wrapper z-[1] left-1/2 -translate-x-1/2 top-0 -translate-y-1/3 absolute"
                   style="pointer-events: none">
-                  <p class="text-[240px] font-serif" style="rotate: -0.5deg">marigold</p>
+                  <p class="text-[240px] font-serif" style="">marigold</p>
                 </div>
                 <div class="text relative z-[2]">
                   <p class="text-[130px] bg-footer-texture-text font-serif mb-6">PALOMA</p>
@@ -155,51 +219,230 @@
           </div>
 
           <div class="section__photo-gallery">
-            <div class="container py-32">
-              <div class="photo-gallery-inner relative">
-                <div class="text-box"></div>
+            <div class="py-32 mx-auto">
+              <div class="photo-gallery-outer">
+                <div class="photo-gallery-inner relative">
+                  
+                  <div class="photo-item-wrapper relative h-screen container-md max-w-5xl w-full mx-auto">
+                    <div class="text-box absolute top-1/2 -translate-y-1/2 z-[10]">
+                      <div class="inner p-20 bg-texture" style="background-image: url(<%=require('./images/texture-text-box.png')%>); background-size: cover; border-radius: 6px;">
+                        <div class="text-item">
+                            <p class="text-marigold translate-y-0 leading-[60px] text-[18px]"><span class="font-serif text-[28px]">30ml</span> <span class="font-bold">Marigold Blanco</span></p>
+                        </div>
+                        <div class="text-item">
+                            <p class="text-marigold translate-y-0 leading-[60px] text-[18px]"><span class="font-serif text-[28px]">10ml</span> <span class="font-bold">Lime Juice</span></p>
+                        </div>
+                        <div class="text-item">
+                            <p class="text-marigold translate-y-0 leading-[60px] text-[18px]"><span class="font-serif text-[28px]">45ml</span> <span class="font-bold">Grapefruit Soda</span></p>
+                        </div>
+                        <div class="text-item">
+                            <p class="text-marigold translate-y-0 leading-[60px] text-[18px]"><span class="font-serif text-[28px]">50ml</span> <span class="font-bold">Prosecco</span> 
+                              <br /> <span class="font-bold">And a</span> <span class="font-serif text-[28px]">dash</span> <span class="font-bold">of Aperol...</span> 
+                              <br /><span class="font-serif text-[28px]">ENJOY!</span></p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="photo-item absolute right-0 top-1/2 !-translate-y-1/2" style="z-index: 1;">
+                      <img src="<%= require('./images/photo-gallery0.jpg') %>" alt="">
+                    </div>
+                    <div class="photo-item absolute right-0 top-1/2 !-translate-y-1/2" style="z-index: 2;">
+                      <img src="<%= require('./images/photo-gallery1.jpg') %>" alt="">
+                    </div>
+                    <div class="photo-item absolute right-0 top-1/2 !-translate-y-1/2" style="z-index: 3;">
+                      <img src="<%= require('./images/photo-gallery2.jpg') %>" alt="">
+                    </div>
+                    <div class="photo-item absolute right-0 top-1/2 !-translate-y-1/2" style="z-index: 4;">
+                      <img src="<%= require('./images/photo-gallery3.jpg') %>" alt="">
+                    </div>
+                  </div>
 
-                <div class="photo-item-wrapper"></div>
+                  <div class="inner-marquee absolute bottom-1/4 z-[100]">
+                    <div class="marquee-wrapper flex">
+                      <!-- <div class="marquee-text" style="text-wrap: nowrap;">[Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!]</div> -->
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                      <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+                    </div>
+                  </div>
+                  
+                </div>
               </div>
 
-              <div class="inner-marquee">
-                <div class="marquee-wrapper flex">
-                  <!-- <div class="marquee-text" style="text-wrap: nowrap;">[Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!]</div> -->
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
-                  <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
+            </div>
+          </div>
+
+
+
+
+
+
+          <!-- Product list -->
+          <div class="section__product-list">
+            <div class="container mx-auto py-12">
+              <div class="title-section text-center">
+                <p class="text-[93px] font-serif text-marigold bg-footer-texture-text tracking-[.05em]">SWAG <span class="font-extra">WORTH</span> <br />STEALING</p>
+                <p class="text-[11px] text-marigold font-bold tracking-[.25em] uppercase">Look irresponsible.</p>
+                <p class="text-[11px] text-marigold font-bold tracking-[.25em] uppercase">Shop responsibly.</p>
+              </div>
+              <div class="product-list py-12">
+                <div class="grid grid-cols-12">
+
+                  <div class="md:col-span-3 col-span-6 product-item" style="--product-background-image: url('<%= require('./images/text-texture.jpg') %>')">
+                    <div class="inner py-8 px-4">
+                      <div class="image-wrapper relative pt-[100%] mb-4">
+                        <img class="image-ratio" src="<%= require('./images/cap-placeholder.png') %>" alt="">
+                        <img class="image-ratio hover-image" src="<%= require('./images/hover-product-placeholder.jpg') %>" alt="">
+                      </div>
+                      <div class="text-wrapper text-center">
+                        <div class="title-wrapper">
+                          <p class="text-[16px] font-bold">PRODUCT NAME</p>
+                        </div>
+                        <div class="price-wrapper">
+                          <p class="text-[12px] font-bold tracking-[.25em]">IDR 1,050,000</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="md:col-span-3 col-span-6 product-item" style="--product-background-image: url('<%= require('./images/text-texture.jpg') %>')">
+                    <div class="inner py-8 px-4">
+                      <div class="image-wrapper relative pt-[100%] mb-4">
+                        <img class="image-ratio" src="<%= require('./images/cap-placeholder.png') %>" alt="">
+                        <img class="image-ratio hover-image" src="<%= require('./images/hover-product-placeholder.jpg') %>" alt="">
+                      </div>
+                      <div class="text-wrapper text-center">
+                        <div class="title-wrapper">
+                          <p class="text-[16px] font-bold">PRODUCT NAME</p>
+                        </div>
+                        <div class="price-wrapper">
+                          <p class="text-[12px] font-bold tracking-[.25em]">IDR 1,050,000</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="md:col-span-3 col-span-6 product-item" style="--product-background-image: url('<%= require('./images/text-texture.jpg') %>')">
+                    <div class="inner py-8 px-4">
+                      <div class="image-wrapper relative pt-[100%] mb-4">
+                        <img class="image-ratio" src="<%= require('./images/cap-placeholder.png') %>" alt="">
+                        <img class="image-ratio hover-image" src="<%= require('./images/hover-product-placeholder.jpg') %>" alt="">
+                      </div>
+                      <div class="text-wrapper text-center">
+                        <div class="title-wrapper">
+                          <p class="text-[16px] font-bold">PRODUCT NAME</p>
+                        </div>
+                        <div class="price-wrapper">
+                          <p class="text-[12px] font-bold tracking-[.25em]">IDR 1,050,000</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="md:col-span-3 col-span-6 product-item" style="--product-background-image: url('<%= require('./images/text-texture.jpg') %>')">
+                    <div class="inner py-8 px-4">
+                      <div class="image-wrapper relative pt-[100%] mb-4">
+                        <img class="image-ratio" src="<%= require('./images/cap-placeholder.png') %>" alt="">
+                        <img class="image-ratio hover-image" src="<%= require('./images/hover-product-placeholder.jpg') %>" alt="">
+                      </div>
+                      <div class="text-wrapper text-center">
+                        <div class="title-wrapper">
+                          <p class="text-[16px] font-bold">PRODUCT NAME</p>
+                        </div>
+                        <div class="price-wrapper">
+                          <p class="text-[12px] font-bold tracking-[.25em]">IDR 1,050,000</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="md:col-span-3 col-span-6 product-item" style="--product-background-image: url('<%= require('./images/text-texture.jpg') %>')">
+                    <div class="inner py-8 px-4">
+                      <div class="image-wrapper relative pt-[100%] mb-4">
+                        <img class="image-ratio" src="<%= require('./images/cap-placeholder.png') %>" alt="">
+                        <img class="image-ratio hover-image" src="<%= require('./images/hover-product-placeholder.jpg') %>" alt="">
+                      </div>
+                      <div class="text-wrapper text-center">
+                        <div class="title-wrapper">
+                          <p class="text-[16px] font-bold">PRODUCT NAME</p>
+                        </div>
+                        <div class="price-wrapper">
+                          <p class="text-[12px] font-bold tracking-[.25em]">IDR 1,050,000</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="md:col-span-3 col-span-6 product-item" style="--product-background-image: url('<%= require('./images/text-texture.jpg') %>')">
+                    <div class="inner py-8 px-4">
+                      <div class="image-wrapper relative pt-[100%] mb-4">
+                        <img class="image-ratio" src="<%= require('./images/cap-placeholder.png') %>" alt="">
+                        <img class="image-ratio hover-image" src="<%= require('./images/hover-product-placeholder.jpg') %>" alt="">
+                      </div>
+                      <div class="text-wrapper text-center">
+                        <div class="title-wrapper">
+                          <p class="text-[16px] font-bold">PRODUCT NAME</p>
+                        </div>
+                        <div class="price-wrapper">
+                          <p class="text-[12px] font-bold tracking-[.25em]">IDR 1,050,000</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="md:col-span-3 col-span-6 product-item" style="--product-background-image: url('<%= require('./images/text-texture.jpg') %>')">
+                    <div class="inner py-8 px-4">
+                      <div class="image-wrapper relative pt-[100%] mb-4">
+                        <img class="image-ratio" src="<%= require('./images/cap-placeholder.png') %>" alt="">
+                        <img class="image-ratio hover-image" src="<%= require('./images/hover-product-placeholder.jpg') %>" alt="">
+                      </div>
+                      <div class="text-wrapper text-center">
+                        <div class="title-wrapper">
+                          <p class="text-[16px] font-bold">PRODUCT NAME</p>
+                        </div>
+                        <div class="price-wrapper">
+                          <p class="text-[12px] font-bold tracking-[.25em]">IDR 1,050,000</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
                 </div>
               </div>
             </div>
           </div>
+
+
+
 
           <!-- footer -->
           <div class="container mx-auto">
@@ -210,21 +453,23 @@
             <div class="container mx-auto">
               <div class="flex justify-between items-center mb-4">
                 <div class="logo">
-                  <img src="/assets/logo.png" alt="" />
+                  <img src="<%= require('./images/logo.png') %>" alt="" />
                 </div>
 
                 <div class="tagline text-right">
-                  <p class="text-marigold font-serif text-[70px] bg-footer-texture-text">FOLLOW</p>
+                  <p class="text-marigold leading-[.96em] font-serif text-[70px] bg-footer-texture-text">FOLLOW</p>
                   <div class="socials flex items-center justify-end">
-                    <a href="#">
-                      <img src="/assets/ig_footer.svg" class="mr-2" alt="" />
-                    </a>
-                    <a href="#">
-                      <img src="/assets/tiktok_footer.svg" class="mr-8" alt="" />
-                    </a>
-                    <p class="text-marigold font-serif text-[70px] bg-footer-texture-text">THE</p>
+                    <div class="socials-wrapper flex mb-2">
+                      <a href="#">
+                        <img src="<%= require('./images/ig_footer.svg') %>" class="mr-2" alt="" />
+                      </a>
+                      <a href="#">
+                        <img src="<%= require('./images/tiktok_footer.svg') %>" class="mr-8" alt="" />
+                      </a>
+                    </div>
+                    <p class="text-marigold leading-[.96em] font-serif text-[70px] bg-footer-texture-text">THE</p>
                   </div>
-                  <p class="text-marigold font-serif text-[70px] bg-footer-texture-text">CHAOS</p>
+                  <p class="text-marigold leading-[.96em] font-serif text-[70px] bg-footer-texture-text">CHAOS</p>
                 </div>
               </div>
 

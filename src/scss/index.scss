@@ -5,9 +5,12 @@
 @tailwind utilities;
 
 // @import "swiper";
+@import './components/hero-image.scss';
 @import './components/product-highlight.scss';
 @import './components/title-break.scss';
 @import './components/photo-gallery.scss';
+@import './components/product-list.scss';
+@import './components/text-highlight.scss';
 @font-face {
   font-family: 'Fresh Almond';
   font-style: normal;
@@ -26,7 +29,7 @@
 
 html,
 body {
-  @apply h-full;
+  // @apply h-full;
 }
 
 .bg-footer-texture-text {
@@ -37,11 +40,22 @@ body {
   line-height: 1;
 }
 
+.bg-texture-socials {
+  background-size: cover;
+}
+
 #page {
   padding: 0;
   margin: 0;
-  background-repeat: no-repeat;
+  // background-repeat: no-repeat;
   background-size: 100% auto;
+  background-repeat: repeat-y;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  margin-top: -4px;
+  position: relative;
+  z-index: 9;
+  background-color: #fff;
 }
 
 .image-ratio {
@@ -51,3 +65,13 @@ body {
   width: 100%;
   height: 100%;
 }
+
+
+.socials-sticky {
+  writing-mode: vertical-lr;
+  rotate: 180deg;
+  // border-radius: 6px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+

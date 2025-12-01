@@ -66,11 +66,11 @@ module.exports = {
         },
       ],
     }),
-    new ESLintPlugin({
-      extensions: 'js',
-      context: paths.src,
+    // new ESLintPlugin({
+    //   extensions: 'js',
+    //   context: paths.src,
       
-    }),
+    // }),
     // new StylelintPlugin({
     //   extensions: ['css', 'scss'],
     //   context: paths.src,

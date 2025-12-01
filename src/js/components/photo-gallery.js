@@ -5,7 +5,26 @@ gsap.registerPlugin(ScrollTrigger);
 (() => {
   document.addEventListener('DOMContentLoaded', () => {
     const photoGalleryEl = document.querySelector('.section__photo-gallery');
-    const photosEl = photoGalleryEl.querySelectorAll('.photo-item-wrapper');
+    const photosEl = photoGalleryEl.querySelectorAll('.photo-item');
+
+    const TRANSFORM_ROTATE_PROPS = [
+        {
+            '--tw-rotate': '1.92deg',
+            '--tw-translate-x': '-40px'
+        },
+        {
+            '--tw-rotate': '-3.11deg',
+            '--tw-translate-x': '28px'
+        },
+        {
+            '--tw-rotate': '-2.83deg',
+            '--tw-translate-x': '12px',
+        },
+        {
+            '--tw-rotate': '0deg'
+        }
+    ]
+
     // or gsap.utils.toArray('.photoGalleryEl')
 
     // const marqueeTextEl = document.querySelector('.marquee-text')
@@ -14,17 +33,56 @@ gsap.registerPlugin(ScrollTrigger);
       repeat: -1,
     });
 
+    const textEl = gsap.utils.toArray('.text-item')
+    photosEl.forEach(el => {
+        gsap.set(el, {
+            zoom: 1.4,
+            autoAlpha: 0,
+            '--tw-rotate': '12deg',
+            '--tw-translate-x': '12px'
+        })
+    })
+
+    textEl.forEach((el, i) => {
+        gsap.set(el, {
+            autoAlpha: 0,
+            ...TRANSFORM_ROTATE_PROPS[i]
+        })
+    })
+
+    const photosHeight = photosEl[0].getBoundingClientRect().height
+
     const galleryTl = gsap.timeline({
       scrollTrigger: {
-        trigger: photoGalleryEl,
-        start: 'top center',
-        end: `${photosEl.length * 100}%`,
+        trigger: ".photo-gallery-outer",
+        start: 'top top',
+        end: `+=${350 * 4}px`,
         pin: true,
+        pinnedContainer: ".photo-gallery-outer",
+        scrub: true,
+        snap: {
+            snapTo: [0, 0.25, 0.5, 0.75, 1],
+            delay: .05,
+            duration: .1,
+            inertia: false,
+        }
+        // once: true
       },
     });
 
-    photosEl.forEach((photo) => {
-      galleryTl.to(photo, {});
+    photosEl.forEach((photo, i) => {
+        const tl = gsap.timeline()
+        tl.to(textEl[i], {
+            autoAlpha: 1,
+            '--tw-rotate': 0,
+            '--tw-translate-x': 0
+        }, 0)
+        tl.to(photo, {
+            zoom: 1,
+            autoAlpha: 1,
+            ...TRANSFORM_ROTATE_PROPS[i],
+        }, 0);
+        galleryTl.add(tl)
     });
   });
 

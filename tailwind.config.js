@@ -9,7 +9,9 @@ module.exports = {
         gray: '#909090',
         "gray-1": '#333',
         "grey-1": '#333',
-        neutral: '#f2f2f2'
+        neutral: '#f2f2f2',
+        "grey-2": "#565656",
+        "gray-2": "#565656"
       },
       fontFamily: {
         sans: '"Sora", sans-serif',
