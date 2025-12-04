@@ -23,11 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet" />
 
     <!-- Title & description -->
-    <title><%= htmlWebpackPlugin.options.title %></title>
-    <meta
-      name="description"
-      content="A starter frontend boilerplate using Webpack 5, TailwindCSS, SASS, PostCSS, Babel, ESLint, Stylelint, Prettier and more." />
-    <meta name="keywords" content="webpack, webpack5, sass, postcss, babel, eslint, stylelint, prettier" />
+    <title>marigold</title>
 
     <!-- Facebook Open-Graph Tags -->
     <meta property="og:title" content="Webpack Tailwind Starter" />
@@ -43,7 +39,149 @@
       document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, 'js');
     </script>
   </head>
-  <body class="font-sans">
+  <body class="font-sans overflow-x-hidden">
+
+    <!-- Navigation -->
+    <div id="navigation" class="fixed top-0 w-full">
+      <div class="container mx-auto py-8" style="z-index: 7;">
+        <div class="flex justify-between items-center">
+            <div class="logo-image">
+                <img src="<%= require('./images/Marigold_Logo.svg') %>" alt="">
+            </div>
+            <div class="navigation hidden md:block">
+  
+                <div class="inner py-5 px-32 border-marigold border rounded-md">
+                    <div class="wrapper flex">
+                        <div class="text">
+                            <p class="text-marigold">THE SPIRIT</p>
+                        </div>
+                        <div class="spacer px-6 text-marigold"> | </div>
+                        <div class="text">
+                            <p class="text-marigold">MARIGOLD PALOMA</p>
+                        </div>
+                        <div class="spacer px-6 text-marigold"> | </div>
+                        <div class="text">
+                            <p class="text-marigold">SWAG</p>
+                        </div>
+                    </div>
+                </div>
+  
+            </div>
+            <div class="actions py-5 px-6 border-marigold border rounded-md hidden md:block">
+                <div class="wrapper flex items-center">
+                    <div class="text">
+                        <img src="<%= require('./images/btn_acc.svg') %>" alt="">
+                    </div>
+                    <div class="spacer px-6 text-marigold"> | </div>
+                    <div class="text">
+                        <img src="<%= require('./images/btn_cart.svg') %>" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="hamburger-wrapper md:hidden block">
+              <div class="hamburger">
+                <div class="bg-marigold w-[24px] h-[2px] mb-1" style="border-radius: 2rem;"></div>
+                <div class="bg-marigold w-[18px] h-[2px] mb-1 ml-auto" style="border-radius: 2rem;"></div>
+                <div class="bg-marigold w-[24px] h-[2px]" style="border-radius: 2rem;"></div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+    <aside id="mobile-menu" class="mobile-menu fixed inset-0 w-screen h-screen bg-marigold z-20 md:hidden block" style="background-image: url(<%= require('./images/background_mobile_menu.png') %>); background-size: cover;">
+      <div class="container">
+        <div class="inner py-8">
+          <div class="logo-image-header mb-4 relative">
+            <div class="absolute right-0 top-1/2 -translate-y-1/2 text-white menu-close">
+              <img src="<%= require('./images/menu_close.svg') %>" alt="">
+            </div>
+            <img src="<%= require('./images/marigold_menu_mobile.svg') %>" class="mx-auto logo-image" alt="">
+          </div>
+          <hr class="border border-white">
+          <div class="menu-wrapper text-center py-7">
+            <div class="menu-item mb-8">
+              <a href="#" class="text-[16px] font-bold tracking-[.25em] text-white">THE SPIRIT</a>
+            </div>
+            <div class="menu-item mb-8">
+              <a href="#" class="text-[16px] font-bold tracking-[.25em] text-white">MARIGOLD PALOMA</a>
+            </div>
+            <div class="menu-item mb-8">
+              <a href="#" class="text-[16px] font-bold tracking-[.25em] text-white">SWAG</a>
+            </div>
+            <div class="menu-item mb-8">
+              <a href="#" class="text-[16px] font-bold tracking-[.25em] text-white">LOGIN</a>
+            </div>
+            <div class="menu-item">
+              <a href="#" class="text-[16px] font-bold tracking-[.25em] text-white">CART (0)</a>
+            </div>
+          </div>
+          <hr class="border border-white">
+          <div class="logo-icon py-4">
+            <img class="mx-auto" src="<%= require('./images/marigold_menu_logo_mobile.svg') %>" alt="">
+          </div>
+          <div class="socials py-4 flex gap-x-2.5 items-center justify-center">
+            <div class="text text-white text-[14px] tracking-[.25em] font-bold uppercase">
+              Follow the chaos
+            </div>
+            <div class="socials-buttons gap-x-1.5 flex">
+              <a href="#">
+                <img src="<%= require('./images/menu_ig.svg') %>" alt="">
+              </a>
+              <a href="#">
+                <img src="<%= require('./images/menu_tiktok.svg') %>" alt="">
+              </a>
+            </div>
+          </div>
+          <div class="py-4 text-center">
+            <p class="text-[11px] text-white font-bold tracking-[.25em]">MARIGOLD™ © 2025.</p>
+            <p class="text-[11px] text-white font-bold tracking-[.25em]">Respect the brand, embrace the chaos.</p>
+          </div>
+          <div class="py-4 text-center">
+            <a href="#" class="text-white tracking-[.25em] font-bold uppercase text-[11px] underline">Terms & Conditions.</a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+
+    <div class="modal modal__age-verification inset-0 w-full h-full" style="z-index: 1000; display: none;">
+      <div class="modal_overlay absolute inset-0 w-full h-full bg-black opacity-[.75] z-1"></div>
+      <div class="relative flex items-center justify-center h-full z-2 px-4 md:px-0">
+        <div class="max-w-2xl modal_body py-12 px-8 mx-auto" style="background-image: url(<%=require('./images/bg-texture.png')%>); background-color: #fff; border-radius: 6px;">
+          <div class="title-wrapper text-center mb-2">
+            <p class="md:text-[45px] text-[30px] font-serif tracking-[.1em] leading-[.9em] text-marigold">OLD ENOUGH TO SIP IRRESPONSIBLY<span class="block md:inline text-[44px] leading-[.9em]">?</span></p>
+          </div>
+          <div class="subtitle-wrapper text-center mb-4">
+            <p class="text-[12px] tracking-[.1em] text-gray">If you're over 21, step into the chaos. If not, we'll save you a sip</p>
+          </div>
+          <div class="buttons-wrapper flex gap-x-8 justify-center mb-4">
+            <div class="yes-button button-item cursor-pointer flex border border-gray-2 items-center max-w-[8.75rem] gap-x-2 px-2 py-2" style="border-radius: 6px;">
+              <div class="items text-[#8e8e93] text-[21.5px] font-serif tracking-[.1em] leading-[.9em]">YES</div>
+              <div class="items text-[#8e8e93] text-[9.5px] tracking-[.1em] mb-1">I am older than 21</div>
+            </div>
+            <div class="no-button button-item cursor-pointer flex border border-gray-2 items-center max-w-[8.75rem] gap-x-2 px-3 py-2" style="border-radius: 6px;">
+              <div class="items text-[#8e8e93] text-[21.5px] font-serif tracking-[.1em] leading-[.9em]">NO</div>
+              <div class="items text-[#8e8e93] text-[9.5px] tracking-[.1em] mb-1">but i can not wait</div>
+            </div>
+          </div>
+          <div class="checkbox-wrapper text-center mb-4">
+            <div class="flex items-center justify-center gap-x-2">
+              <input type="checkbox" id="checkbox-remember" class="border-[#bfbfbf] cursor-pointer" style="border-radius: 4px;">
+              <label for="checkbox-remember">
+                <p class="text-[12px] text-[#8E8E93] tracking-[.1em] cursor-pointer">Remember me on this device</p>
+              </label>
+            </div>
+          </div>
+          <div class="footer-wrapper text-center">
+            <p class="text-grey text-[10px] tracking-[.1em]">By continuing, you confirm that you are of legal drinking age <br />and agree to our Terms & Conditions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="socials-sticky uppercase fixed left-0 top-1/2 translate-y-1/2 items-center z-10 py-6 px-4 flex bg-texture-socials" style="background-image: url(<%=require('./images/bg-texture.png')%>); background-color: #fff;">
       <div class="text text-marigold text-[14px] tracking-[.25em] font-bold">
         Follow the chaos
@@ -58,85 +196,61 @@
       </div>
     </div>
 
+    <div id="whatsapp-sticky" class="whatsapp-sticky fixed right-0 bottom-24 -translate-y-1/2 z-10 bg-white border-marigold border" style="border-top-left-radius: 6px; border-bottom-left-radius: 6px;">
+      <div class="inner p-4 flex items-center">
+        <div class="logo-wrapper">
+          <a href="#">
+            <img src="<%= require('./images/whatsapp-logo.svg') %>" class="w-[20px] h-[20px]" alt="">
+          </a>
+        </div>
+        <div class="text-wrapper overflow-hidden">
+          <a href="#" class="uppercase text font-bold text-[12px] tracking-[.25em] leading-[1] pl-6" style="text-wrap: nowrap;">ORDER NOW</a>
+        </div>
+      </div>
+    </div>
+
     <div id="smooth-wrapper">
       <div id="smooth-content">
         <!-- Hero Image -->
-
-        <div id="hero-image" class="relative" style="z-index: 8;" data-speed="0.4">
-            <div class="section__hero-image">
-              <div class="relative w-full">
-                <div class="swiper">
-                  <div class="swiper-wrapper swiper-container">
-                    <div class="swiper-slide">
-                      <div class="pt-[48.75%] relative">
-                        <img class="image-ratio" src="<%= require('./images/hero-image0.jpg') %>" alt="" />
+        <div class="section__hero-image" id="hero-image">
+          <div class="relative" style="z-index: 8;" data-speed=".8">
+              <div class="wrapper">
+                <div class="relative w-full">
+                  <div class="swiper">
+                    <div class="swiper-wrapper swiper-container">
+                      <div class="swiper-slide">
+                        <div class="md:pt-[48.75%] pt-[100vh] relative">
+                          <img class="image-ratio" src="<%= require('./images/hero-image0.jpg') %>" alt="" />
+                        </div>
                       </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="pt-[48.75%] relative">
-                        <img class="image-ratio" src="<%= require('./images/hero-image1.jpg') %>" alt="" />
+                      <div class="swiper-slide">
+                        <div class="md:pt-[48.75%] pt-[100vh] relative">
+                          <img class="image-ratio" src="<%= require('./images/hero-image1.jpg') %>" alt="" />
+                        </div>
                       </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="pt-[48.75%] relative">
-                        <img class="image-ratio" src="<%= require('./images/hero-image2.jpg') %>" alt="" />
+                      <div class="swiper-slide">
+                        <div class="md:pt-[48.75%] pt-[100vh] relative">
+                          <img class="image-ratio" src="<%= require('./images/hero-image2.jpg') %>" alt="" />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+        </div>
 
 
-        <div id="page" style="background-image: url(<%=require('./images/bg-texture.png')%>)">
+        <div id="page" class="overflow-x-hidden" style="background-image: url(<%=require('./images/bg-texture.png')%>)">
 
-          <!-- Navigation -->
-          <div class="container mx-auto py-8" style="z-index: 7;">
-            <div class="flex justify-between items-center">
-                <div class="logo-image">
-                    <img src="<%= require('./images/Marigold_Logo.svg') %>" alt="">
-                </div>
-                <div class="navigation">
-
-                    <div class="inner py-5 px-32 border-marigold border rounded-md">
-                        <div class="wrapper flex">
-                            <div class="text">
-                                <p class="text-marigold">THE SPIRIT</p>
-                            </div>
-                            <div class="spacer px-6 text-marigold"> | </div>
-                            <div class="text">
-                                <p class="text-marigold">MARIGOLD PALOMA</p>
-                            </div>
-                            <div class="spacer px-6 text-marigold"> | </div>
-                            <div class="text">
-                                <p class="text-marigold">SWAG</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="actions py-5 px-6 border-marigold border rounded-md">
-                    <div class="wrapper flex items-center">
-                        <div class="text">
-                            <img src="<%= require('./images/btn_acc.svg') %>" alt="">
-                        </div>
-                        <div class="spacer px-6 text-marigold"> | </div>
-                        <div class="text">
-                            <img src="<%= require('./images/btn_cart.svg') %>" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
           <!-- text-aninmation  -->
           <div class="section__text-highlight">
             <div class="outer py-40">
               <div class="container mx-auto" id="text-animation">
                 <div class="text text-center">
-                  <p class="font-serif text-marigold bg-footer-texture-text" style="font-size: 93px">
-                    CRAFTED <span class="font-extra">TO DEATH</span><br />
-                    IN MEXICO <br /><span class="font-extra">REBORN AND </span> PURIFIED <br />IN BALI.
+                  <p class="font-serif text-marigold bg-footer-texture-text text-highlight">
+                    CRAFTED <span class="highlight-mask md:inline-flex block overflow-hidden"><span class="font-extra block md:inline-block text-marigold trigger-slide" data-direction="right">TO DEATH</span></span><br class="md:block hidden" />
+                    IN MEXICO <br /><span class="highlight-mask md:inline-flex block overflow-hidden"><span class="font-extra block md:inline-block text-marigold trigger-slide" data-direction="left">REBORN AND </span></span> PURIFIED <br />IN BALI.
                   </p>
                 </div>
               </div>
@@ -152,12 +266,12 @@
 
           <div id="product-highlight" class="section__product-highlight">
             <div class="container mx-auto">
-              <div class="inner px-24">
+              <div class="inner md:px-24">
                 <div class="swiper">
                   <div class="swiper-wrapper">
                     <div class="swiper-slide">
                       <div class="grid grid-cols-12">
-                        <div class="md:col-span-6">
+                        <div class="md:col-span-6 col-span-12">
                           <div class="image-wrapper relative">
                             <img src="<%= require('./images/product-image.png') %>" alt="" />
                             <div class="repeat-text" data-repeat-text="BLANCO">
@@ -166,7 +280,7 @@
                           </div>
                         </div>
 
-                        <div class="md:col-span-6">
+                        <div class="md:col-span-6 col-span-12">
                           <div class="rotate-icon-wrapper mb-6">
                             <img src="<%= require('./images/rotate_placeholder.svg') %>" alt="" />
                           </div>
@@ -185,6 +299,57 @@
                             </p>
                           </div>
                           <div class="input-wrapper"></div>
+
+                          <div class="buttons-wrapper flex gap-x-4">
+                            <div class="button-item">
+                              <a href="" class="text-[rgba(0,0,0,.5)] px-4 py-4 bg-[#eaeaea] block uppercase tracking-[.25em] font-bold text-[12px]">Got a code? </a>
+                            </div>
+                            <div class="button-item">
+                              <a href="" class="text-[rgba(0,0,0,.5)] px-4 py-4 block uppercase tracking-[.25em] font-bold text-[12px] text-white" style="border-radius: 6px; background-image: url(<%= require('./images/footer-text-texture.jpg') %>);">Grab Mine</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="grid grid-cols-12">
+                        <div class="md:col-span-6 col-span-12">
+                          <div class="image-wrapper relative">
+                            <img src="<%= require('./images/product-image.png') %>" alt="" />
+                            <div class="repeat-text" data-repeat-text="BLANCO">
+                              <div class="inner-wrapper relative"></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="md:col-span-6 col-span-12">
+                          <div class="rotate-icon-wrapper mb-6">
+                            <img src="<%= require('./images/rotate_placeholder.svg') %>" alt="" />
+                          </div>
+                          <div class="title-wrapper text-marigold mb-2">
+                            <h2>marigold</h2>
+                            <p>BLANCO</p>
+                          </div>
+                          <div class="price-wrapper mb-4">
+                            <p class="text-grey text-[12px] tracking-[0.25em] font-bold">IDR 1,050,000</p>
+                          </div>
+                          <div class="description-wrapper mb-4">
+                            <p class="text-[11px] leading-[18px] tracking-[.1em] text-gray-1">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                          </div>
+                          <div class="input-wrapper"></div>
+
+                          <div class="buttons-wrapper flex gap-x-4">
+                            <div class="button-item">
+                              <a href="" class="text-[rgba(0,0,0,.5)] px-4 py-4 bg-[#eaeaea] block uppercase tracking-[.25em] font-bold text-[12px]">Got a code? </a>
+                            </div>
+                            <div class="button-item">
+                              <a href="" class="text-[rgba(0,0,0,.5)] px-4 py-4 block uppercase tracking-[.25em] font-bold text-[12px] text-white" style="border-radius: 6px; background-image: url(<%= require('./images/footer-text-texture.jpg') %>);">Grab Mine</a>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -199,17 +364,17 @@
             <div class="container mx-auto text-center py-24">
               <div class="inner relative">
                 <div
-                  class="text-outline-wrapper z-[1] left-1/2 -translate-x-1/2 top-0 -translate-y-1/3 absolute"
+                  class="text-outline-wrapper z-[1] left-1/2 -translate-x-1/2 top-0 md:-translate-y-1/3 -translate-y-1/2 absolute"
                   style="pointer-events: none">
-                  <p class="text-[240px] font-serif" style="">marigold</p>
+                  <p class="md:text-[240px] text-[80px] font-serif">marigold</p>
                 </div>
                 <div
-                  class="text-outline-wrapper z-[1] left-1/2 -translate-x-1/2 top-0 -translate-y-1/3 absolute"
+                  class="text-outline-wrapper z-[1] left-1/2 -translate-x-1/2 top-0 md:-translate-y-1/3 -translate-y-1/2 absolute"
                   style="pointer-events: none">
-                  <p class="text-[240px] font-serif" style="">marigold</p>
+                  <p class="md:text-[240px] text-[80px] font-serif">marigold</p>
                 </div>
                 <div class="text relative z-[2]">
-                  <p class="text-[130px] bg-footer-texture-text font-serif mb-6">PALOMA</p>
+                  <p class="md:text-[130px] text-[64px] bg-footer-texture-text font-serif mb-6">PALOMA</p>
                   <p class="text-[11px] uppercase tracking-[.25em] text-marigold font-bold">
                     Dangerously Refreshing
                   </p>
@@ -224,40 +389,39 @@
                 <div class="photo-gallery-inner relative">
                   
                   <div class="photo-item-wrapper relative h-screen container-md max-w-5xl w-full mx-auto">
-                    <div class="text-box absolute top-1/2 -translate-y-1/2 z-[10]">
-                      <div class="inner p-20 bg-texture" style="background-image: url(<%=require('./images/texture-text-box.png')%>); background-size: cover; border-radius: 6px;">
+                    <div class="text-box marigold-drop-shadow absolute md:w-auto w-4/5 md:top-1/2 top-3/4 left-1/2 md:left-auto md:translate-x-auto -translate-x-1/2 -translate-y-1/2 z-[10]">
+                      <div class="inner md:p-20 p-8 bg-texture" style="background-image: url(<%=require('./images/texture-text-box.png')%>); background-size: cover; border-radius: 6px;">
                         <div class="text-item">
-                            <p class="text-marigold translate-y-0 leading-[60px] text-[18px]"><span class="font-serif text-[28px]">30ml</span> <span class="font-bold">Marigold Blanco</span></p>
+                            <p class="text-marigold translate-y-0 leading-[60px] md:text-[18px] text-[14px]"><span class="font-serif md:text-[20px] md:text-[28px]">30ml</span> <span class="font-bold">Marigold Blanco</span></p>
                         </div>
                         <div class="text-item">
-                            <p class="text-marigold translate-y-0 leading-[60px] text-[18px]"><span class="font-serif text-[28px]">10ml</span> <span class="font-bold">Lime Juice</span></p>
+                            <p class="text-marigold translate-y-0 leading-[60px] md:text-[18px] text-[14px]"><span class="font-serif text-[20px] md:text-[28px]">10ml</span> <span class="font-bold">Lime Juice</span></p>
                         </div>
                         <div class="text-item">
-                            <p class="text-marigold translate-y-0 leading-[60px] text-[18px]"><span class="font-serif text-[28px]">45ml</span> <span class="font-bold">Grapefruit Soda</span></p>
+                            <p class="text-marigold translate-y-0 leading-[60px] md:text-[18px] text-[14px]"><span class="font-serif text-[20px] md:text-[28px]">45ml</span> <span class="font-bold">Grapefruit Soda</span></p>
                         </div>
                         <div class="text-item">
-                            <p class="text-marigold translate-y-0 leading-[60px] text-[18px]"><span class="font-serif text-[28px]">50ml</span> <span class="font-bold">Prosecco</span> 
-                              <br /> <span class="font-bold">And a</span> <span class="font-serif text-[28px]">dash</span> <span class="font-bold">of Aperol...</span> 
-                              <br /><span class="font-serif text-[28px]">ENJOY!</span></p>
+                            <p class="text-marigold translate-y-0 leading-[60px] md:text-[18px] text-[14px]"><span class="font-serif text-[20px] md:text-[28px]">50ml</span> <span class="font-bold">Prosecco</span> 
+                              <br /> <span class="font-bold">And a</span> <span class="font-serif text-[20px] md:text-[28px]">dash</span> <span class="font-bold">of Aperol...</span> 
+                              <br /><span class="font-serif text-[20px] md:text-[28px]">ENJOY!</span></p>
                         </div>
                       </div>
                     </div>
-                    
-                    <div class="photo-item absolute right-0 top-1/2 !-translate-y-1/2" style="z-index: 1;">
+                    <div class="photo-item marigold-drop-shadow absolute md:right-0 right-auto md:top-1/2 top-1/4 md:!-translate-y-1/2 -translate-y-1/4" style="z-index: 1;">
                       <img src="<%= require('./images/photo-gallery0.jpg') %>" alt="">
                     </div>
-                    <div class="photo-item absolute right-0 top-1/2 !-translate-y-1/2" style="z-index: 2;">
+                    <div class="photo-item marigold-drop-shadow absolute md:right-0 right-auto md:top-1/2 top-1/4 md:!-translate-y-1/2 -translate-y-1/4" style="z-index: 2;">
                       <img src="<%= require('./images/photo-gallery1.jpg') %>" alt="">
                     </div>
-                    <div class="photo-item absolute right-0 top-1/2 !-translate-y-1/2" style="z-index: 3;">
+                    <div class="photo-item marigold-drop-shadow absolute md:right-0 right-auto md:top-1/2 top-1/4 md:!-translate-y-1/2 -translate-y-1/4" style="z-index: 3;">
                       <img src="<%= require('./images/photo-gallery2.jpg') %>" alt="">
                     </div>
-                    <div class="photo-item absolute right-0 top-1/2 !-translate-y-1/2" style="z-index: 4;">
+                    <div class="photo-item marigold-drop-shadow absolute md:right-0 right-auto md:top-1/2 top-1/4 md:!-translate-y-1/2 -translate-y-1/4" style="z-index: 4;">
                       <img src="<%= require('./images/photo-gallery3.jpg') %>" alt="">
                     </div>
                   </div>
 
-                  <div class="inner-marquee absolute bottom-1/4 z-[100]">
+                  <div class="inner-marquee absolute md:bottom-1/4 bottom-0 z-[100]">
                     <div class="marquee-wrapper flex">
                       <!-- <div class="marquee-text" style="text-wrap: nowrap;">[Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!][Dangerously Refreshing!]</div> -->
                       <div class="marquee-text" style="text-wrap: nowrap">[Dangerously Refreshing!]</div>
@@ -309,7 +473,7 @@
           <div class="section__product-list">
             <div class="container mx-auto py-12">
               <div class="title-section text-center">
-                <p class="text-[93px] font-serif text-marigold bg-footer-texture-text tracking-[.05em]">SWAG <span class="font-extra">WORTH</span> <br />STEALING</p>
+                <p class="text-highlight font-serif text-marigold bg-footer-texture-text tracking-[.05em]" data-split-text data-split-type="lines">SWAG <span class="font-extra">WORTH</span> <br />STEALING</p>
                 <p class="text-[11px] text-marigold font-bold tracking-[.25em] uppercase">Look irresponsible.</p>
                 <p class="text-[11px] text-marigold font-bold tracking-[.25em] uppercase">Shop responsibly.</p>
               </div>
@@ -474,7 +638,7 @@
               </div>
 
               <div class="flex justify-between items-center">
-                <a href="#" class="text-gray tracking-wider">TERMS & CONDITIONS</a>
+                <a href="#" class="text-gray tracking-wider underline">TERMS & CONDITIONS</a>
                 <p class="text-grey">MARIGOLD™ © 2025. Respect the brand, embrace the chaos.</p>
               </div>
             </div>

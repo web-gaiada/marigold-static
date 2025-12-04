@@ -6,6 +6,9 @@
             position: relative;
             z-index: 1;
             margin: auto;
+            @media(max-width: 768px) {
+                width: 95%;
+            }
         }
     }
     .repeat-text {
@@ -21,6 +24,10 @@
         height: 100%;
         color: transparent;
         -webkit-text-stroke: 2px #F87C04;
+
+        @media(max-width: 768px) {
+            font-size: 76px;
+        }
     }
     .title-wrapper {
         h1, h2, h3, h4, h5, h6 {

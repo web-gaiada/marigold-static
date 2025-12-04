@@ -2,6 +2,9 @@ import gsap from "gsap";
 
 ;(() => {
     document.addEventListener("DOMContentLoaded", () => {
+        const productListWrapper = document.querySelector('.section__product-list')
+        if(!productListWrapper) return
+        const productList = productListWrapper.querySelectorAll('.product-item')
         const defaultHoverState = {
             '--product-border-color': 'unset',
             '--product-border-style': 'unset',
@@ -13,8 +16,6 @@ import gsap from "gsap";
             '--product-border-rotate': '0deg',
             '--product-z-index': '-1'
         }
-        const productListWrapper = document.querySelector('.section__product-list')
-        const productList = productListWrapper.querySelectorAll('.product-item')
         // productList.forEach(el => {
         //     gsap.to(el.querySelector('.hover-image'), {
         //         autoAlpha: 0

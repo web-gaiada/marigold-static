@@ -5,12 +5,13 @@
 @tailwind utilities;
 
 // @import "swiper";
-@import './components/hero-image.scss';
+// @import './components/hero-image.scss';
 @import './components/product-highlight.scss';
 @import './components/title-break.scss';
 @import './components/photo-gallery.scss';
 @import './components/product-list.scss';
 @import './components/text-highlight.scss';
+@import './components/product-single.scss';
 @font-face {
   font-family: 'Fresh Almond';
   font-style: normal;
@@ -27,9 +28,8 @@
   font-display: swap;
 }
 
-html,
-body {
-  // @apply h-full;
+#mobile-menu {
+  transform: translateY(-100%);
 }
 
 .bg-footer-texture-text {
@@ -75,3 +75,47 @@ body {
   border-bottom-left-radius: 6px;
 }
 
+.text-highlight {
+  font-size: 93px;
+  @media(max-width: 768px) {
+    font-size: 58px;
+  }
+}
+
+body {
+  #navigation {
+    transform: translateY(-100%);
+    z-index: 11;
+    transition: all .4s ease;
+  }
+  &.nav-active #navigation {
+    transform: translateY(0);
+  }
+  &.inside-hero #navigation {
+    transform: translateY(-100%);
+  }
+}
+
+.marigold-drop-shadow {
+  box-shadow: 12px 6px 10px 0 rgba(0, 0, 0, 0.25);
+
+}
+
+.container {
+  padding-left: .75rem;
+  padding-right: .75rem;
+}
+
+[data-split-text] {
+  overflow-y: hidden;
+}
+
+.word-wrapper {
+  padding-right: .3em;
+  padding-bottom: .1em;
+  margin-right: -.3em;
+}
+
+.force-mask-line-mask {
+  display: inline!important;
+}

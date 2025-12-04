@@ -1,0 +1,28 @@
+.section__product-single {
+    .nav-button {
+        border: 1px solid #909090;
+        background-color: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 6px;
+        cursor: pointer;
+
+        &.active {
+            border: 1px solid #F87C04;
+            background-color: #F87C04;
+        }
+    }
+
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+    }
+
+    .buy-amount-button {
+        &.disabled {
+            cursor: default;
+            color: #888;
+        }
+    }
+}

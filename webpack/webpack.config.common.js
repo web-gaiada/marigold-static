@@ -58,6 +58,14 @@ module.exports = {
       },
       title: 'Webpack Tailwind Starter',
     }),
+    new HtmlWebpackPlugin({
+      filename: 'product.html',
+      template: `${paths.src}/product.html`,
+      templateParameters: {
+        publicUrl: publicUrl.slice(0, -1),
+      },
+      title: 'Product',
+    }),
     new CopyPlugin({
       patterns: [
         {

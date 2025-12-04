@@ -12,5 +12,5 @@
   "rules": {
     "no-unused-vars": "off",
     "experimentalObjectRestSpread": "off"
-  },
+  }
 }

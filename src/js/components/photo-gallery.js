@@ -5,41 +5,38 @@ gsap.registerPlugin(ScrollTrigger);
 (() => {
   document.addEventListener('DOMContentLoaded', () => {
     const photoGalleryEl = document.querySelector('.section__photo-gallery');
+    if(!photoGalleryEl) return
     const photosEl = photoGalleryEl.querySelectorAll('.photo-item');
 
     const TRANSFORM_ROTATE_PROPS = [
         {
-            '--tw-rotate': '1.92deg',
+            // '--tw-rotate': '1.92deg',
+            '--tw-rotate': '18.9deg',
             '--tw-translate-x': '-40px'
         },
         {
-            '--tw-rotate': '-3.11deg',
+            // '--tw-rotate': '-3.11deg',
+            '--tw-rotate': '-9.2deg',
             '--tw-translate-x': '28px'
         },
         {
-            '--tw-rotate': '-2.83deg',
+            // '--tw-rotate': '-2.83deg',
+            '--tw-rotate': '-14.5deg',
             '--tw-translate-x': '12px',
         },
         {
-            '--tw-rotate': '0deg'
+            '--tw-rotate': '4deg'
         }
     ]
-
-    // or gsap.utils.toArray('.photoGalleryEl')
-
-    // const marqueeTextEl = document.querySelector('.marquee-text')
-    const marqueeTextEl = gsap.utils.toArray('.marquee-text');
-    const marqueeTl = horizontalLoop(marqueeTextEl, {
-      repeat: -1,
-    });
 
     const textEl = gsap.utils.toArray('.text-item')
     photosEl.forEach(el => {
         gsap.set(el, {
-            zoom: 1.4,
+            // zoom: 1.8,
             autoAlpha: 0,
             '--tw-rotate': '12deg',
-            '--tw-translate-x': '12px'
+            '--tw-translate-x': '12px',
+            transformOrigin: 'center center'
         })
     })
 
@@ -50,39 +47,146 @@ gsap.registerPlugin(ScrollTrigger);
         })
     })
 
-    const photosHeight = photosEl[0].getBoundingClientRect().height
+    const steps = photosEl.length;
+    const height = 350 * steps;
 
-    const galleryTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".photo-gallery-outer",
-        start: 'top top',
-        end: `+=${350 * 4}px`,
-        pin: true,
-        pinnedContainer: ".photo-gallery-outer",
-        scrub: true,
-        snap: {
-            snapTo: [0, 0.25, 0.5, 0.75, 1],
-            delay: .05,
-            duration: .1,
-            inertia: false,
-        }
-        // once: true
-      },
-    });
+    const galleryTl = [];                        // store all child animations
+    let state = new Array(steps).fill("idle");    // "idle" | "played" | "reversed"
 
+    // build animations (paused, controlled manually)
     photosEl.forEach((photo, i) => {
-        const tl = gsap.timeline()
+        const tl = gsap.timeline({ paused: true });
+
         tl.to(textEl[i], {
             autoAlpha: 1,
-            '--tw-rotate': 0,
-            '--tw-translate-x': 0
-        }, 0)
-        tl.to(photo, {
-            zoom: 1,
-            autoAlpha: 1,
-            ...TRANSFORM_ROTATE_PROPS[i],
+            "--tw-rotate": 0,
+            "--tw-translate-x": 0,
+            duration: .4,
+            ease: 'none',
         }, 0);
-        galleryTl.add(tl)
+
+        tl.to(photo, {
+            // zoom: 1,
+            autoAlpha: 1,
+            duration: .4,
+            ease: 'back.out(1.7)',
+            ...TRANSFORM_ROTATE_PROPS[i]
+        }, 0);
+
+        galleryTl.push(tl);
+    });
+
+    // main scroll Interaction
+    ScrollTrigger.create({
+        trigger: ".photo-gallery-outer",
+        start: "top top",
+        end: `+=${height}px`,
+        pin: true,
+        scrub: true,
+        onUpdate(self) {
+            const p = self.progress;       // 0 → 1
+            const direction = self.direction; // 1 = down, -1 = up
+
+            galleryTl.forEach((tl, i) => {
+                const threshold = i / steps;
+
+                // scrolling down → play
+                if (direction === 1 && p >= threshold && state[i] !== "played") {
+                    state[i] = "played";
+                    tl.play();
+                }
+
+                // scrolling up → reverse
+                if (direction === -1 && p < threshold && state[i] !== "reversed") {
+                    state[i] = "reversed";
+                    tl.reverse();
+                }
+            });
+        },
+    });
+
+
+    // const photoGalleryEl = document.querySelector('.section__photo-gallery');
+    // if (photoGalleryEl) {
+    //     const photosEl = photoGalleryEl.querySelectorAll('.photo-item');
+    //     const textEl = gsap.utils.toArray('.text-item');
+    //     const TRANSFORM_DATA = [
+    //       { rotation: 18.9, x: -40 },
+    //       { rotation: -9.2, x: 28 },
+    //       { rotation: -14.5, x: 12 },
+    //       { rotation: 4, x: 0 }
+    //     ];
+    //     photosEl.forEach((el, i) => {
+    //         const config = TRANSFORM_DATA[i] || { rotation: 0, x: 0 };
+    //         const startRotation = config.rotation + gsap.utils.random(-60, 60);
+
+    //         gsap.set(el, {
+    //             autoAlpha: 0,
+    //             '--tw-rotate': `${startRotation}deg`,
+    //             transformOrigin: "center center"
+    //         });
+    //     });
+
+    //     textEl.forEach((el) => {
+    //         gsap.set(el, { autoAlpha: 0, y: 20 });
+    //     });
+
+    //     const steps = photosEl.length;
+    //     const height = 350 * steps;
+    //     const galleryTl = [];
+    //     let state = new Array(steps).fill("idle");
+
+    //     photosEl.forEach((photo, i) => {
+    //         const config = TRANSFORM_DATA[i] || { rotation: 0, x: 0 };
+    //         const tl = gsap.timeline({ paused: true });
+
+    //         tl.to(photo, {
+    //             duration: 0.4,
+    //             autoAlpha: 1,
+    //             '--tw-rotate': `${config.rotation}deg`,
+                
+    //             ease: "back.out(0.6)",
+    //         }, 0);
+    //         tl.to(textEl[i], {
+    //             autoAlpha: 1,
+    //             y: 0,
+    //             duration: 0.5,
+    //             ease: "power2.out",
+    //         }, 0.2);
+
+    //         galleryTl.push(tl);
+    //     });
+    //     ScrollTrigger.create({
+    //         trigger: ".photo-gallery-outer",
+    //         start: "top top",
+    //         end: `+=${height}px`,
+    //         pin: true,
+    //         onUpdate(self) {
+    //             const p = self.progress;
+    //             const direction = self.direction;
+
+    //             galleryTl.forEach((tl, i) => {
+    //                 const threshold = i / steps; 
+
+    //                 if (direction === 1 && p >= threshold && state[i] !== "played") {
+    //                     state[i] = "played";
+    //                     tl.timeScale(1).play();
+    //                 }
+
+    //                 if (direction === -1 && p < threshold && state[i] !== "reversed") {
+    //                     state[i] = "reversed";
+    //                     tl.timeScale(1.5).reverse();
+    //                 }
+    //             });
+    //         },
+    //     });
+    // }
+
+
+
+    const marqueeTextEl = gsap.utils.toArray('.marquee-text');
+    const marqueeTl = horizontalLoop(marqueeTextEl, {
+      repeat: -1,
     });
   });
 
